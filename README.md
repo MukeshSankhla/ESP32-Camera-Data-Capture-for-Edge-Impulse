@@ -30,8 +30,11 @@
    pip3 install -r requirements.txt
    ```
 
-3. **Flash ESP32 Firmware:**
-   Use your preferred flashing tool to upload the firmware from the `firmware/` folder.
+3. **Upload ESP32 Code:**
+   - Open the Arduino IDE.
+   - Go to `File > Open` and select the code from the `ESP32_Code` folder.
+   - Select the correct board (e.g., DFRobot FireBeetle-2 ESP32-S3) and COM port.
+   - Click **Upload** to flash the code onto your ESP32.
 
 ## Usage
 1. **Run the Web Interface:**
