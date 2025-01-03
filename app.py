@@ -1,4 +1,8 @@
-from flask import Flask, render_template, request, jsonify, send_from_directory
+# Project: ESP32 Edge Capture
+# Author: Mukesh Sankhla
+# Website: https://www.makerbrains.com
+# GitHub: https://github.com/MukeshSankhla
+
 import os
 import requests
 import serial
@@ -10,6 +14,7 @@ import json
 
 app = Flask(__name__)
 
+# Function to get a list of available COM ports
 def get_com_ports():
     return [port.device for port in serial.tools.list_ports.comports()]
 
@@ -18,10 +23,12 @@ image_dir = "captured_images"
 if not os.path.exists(image_dir):
     os.makedirs(image_dir)
 
+# Route to render the home page with available COM ports
 @app.route('/')
 def home():
     return render_template('index.html', com_ports=get_com_ports())
 
+# Route to handle image capture and upload
 @app.route('/capture', methods=['POST'])
 def capture():
     try:
