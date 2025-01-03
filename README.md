@@ -11,12 +11,12 @@
 
 ## Requirements
 - **Hardware:**
-  - DFRobot FireBeetle-2 ESP32-S3
+  - [DFRobot FireBeetle-2 ESP32-S3](https://www.dfrobot.com/product-2676.html)
   - USB Cable
 - **Software:**
   - Python 3.x
   - Required Python Libraries (see `requirements.txt`)
-  - Edge Impulse Account
+  - [Edge Impulse Account](https://edgeimpulse.com/)
 
 ## Installation
 1. **Clone the Repository:**
