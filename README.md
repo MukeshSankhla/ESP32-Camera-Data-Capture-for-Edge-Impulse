@@ -19,11 +19,11 @@ EdgeCapture is a streamlined tool designed to simplify image data collection and
 ## 📦 Installation
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/edgecapture.git
+   git clone https://github.com/MukeshSankhla/ESP32-Edge-Capture.git
    ```
 2. Navigate to the project folder:
    ```bash
-   cd edgecapture
+   cd ESP32-Edge-Capture
    ```
 3. Install dependencies:
    ```bash
