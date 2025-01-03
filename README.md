@@ -51,18 +51,9 @@
 - The ESP32 captures the image and sends it back to the PC.
 - The PC uploads the image with the specified label to Edge Impulse.
 
-## Contribution
-Contributions are welcome! Please open an issue or submit a pull request.
-
 ## License
 This project is licensed under the **MIT License**.
 
-## Acknowledgments
-Special thanks to the Edge Impulse team and the open-source community for their contributions.
-
 ---
 **Author:** Mukesh Sankhla  
-For any queries, feel free to reach out!
-
----
-Happy Building! 🚀
+**Website:** https://www.makerbrains.com
