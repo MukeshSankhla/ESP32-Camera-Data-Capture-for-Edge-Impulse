@@ -1,91 +1,65 @@
-ESP32-Edge-Capture
+# ESP32 Edge Capture
 
-ESP32-Edge-Capture is a tool designed to streamline data collection from an ESP32 camera module using a USB connection and integrate it seamlessly with Edge Impulse for machine learning projects. The tool provides an intuitive web interface to manage image capture and upload workflows for training and testing AI models.
+## Overview
+**ESP32 Edge Capture** is a tool designed to simplify image data collection from an ESP32 camera module for training and testing AI/ML models on Edge Impulse. The tool facilitates seamless communication between an ESP32 and a PC via USB, enabling users to capture and upload labeled image data efficiently.
 
-📚 Overview
+## Features
+- USB communication between ESP32 and PC.
+- Web-based interface for ease of use.
+- Supports both training and testing data collection.
+- Real-time image capture and upload to Edge Impulse.
 
-This project enables users to capture images using an ESP32 camera module and upload them directly to the Edge Impulse platform via a user-friendly Python-based web interface.
+## Requirements
+- **Hardware:**
+  - ESP32-S3 Camera Module
+  - USB Cable
+- **Software:**
+  - Python 3.x
+  - Required Python Libraries (see `requirements.txt`)
+  - Edge Impulse Account
 
-Key Features:
+## Installation
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/MukeshSankhla/ESP32-Edge-Capture.git
+   cd ESP32-Edge-Capture
+   ```
 
-📸 Real-time Image Capture: Capture images using the ESP32 camera module.
+2. **Install Dependencies:**
+   ```bash
+   pip3 install -r requirements.txt
+   ```
 
-🚀 Seamless Edge Impulse Integration: Upload images directly to Edge Impulse for training and testing AI models.
+3. **Flash ESP32 Firmware:**
+   Use your preferred flashing tool to upload the firmware from the `firmware/` folder.
 
-🖥️ User-Friendly Web Interface: Easily manage capture, labeling, and upload via a local web GUI.
+## Usage
+1. **Run the Web Interface:**
+   ```bash
+   python app.py
+   ```
+2. Open the web interface in your browser (default: `http://localhost:5000`).
+3. Select the COM port, input your Edge Impulse API key, and choose between `Train` or `Test` mode.
+4. Enter the label for your dataset.
+5. Click `Capture and Upload` to start data collection.
 
-🔌 USB Communication: ESP32 communicates with the PC via USB for efficient data transfer.
+## How It Works
+- The PC sends a command to the ESP32 to capture an image.
+- The ESP32 captures the image and sends it back to the PC.
+- The PC uploads the image with the specified label to Edge Impulse.
 
-🛠️ Prerequisites
+## Contribution
+Contributions are welcome! Please open an issue or submit a pull request.
 
-Make sure you have the following installed:
+## License
+This project is licensed under the **MIT License**.
 
-Python 3.x
+## Acknowledgments
+Special thanks to the Edge Impulse team and the open-source community for their contributions.
 
-ESP-IDF or Arduino IDE
+---
+**Author:** Mukesh Sankhla  
+For any queries, feel free to reach out!
 
-Required Python libraries:
-
-pip install flask pyserial requests
-
-ESP32 Camera module
-
-Edge Impulse account
-
-💻 Installation
-
-Clone the repository:
-
-git clone https://github.com/MukeshSankhla/ESP32-Edge-Capture.git
-cd ESP32-Edge-Capture
-
-Install the required dependencies:
-
-pip install -r requirements.txt
-
-Flash the ESP32 firmware using Arduino IDE or ESP-IDF.
-
-🚀 Usage
-
-Connect your ESP32 camera module to your PC via USB.
-
-Start the web interface:
-
-python app.py
-
-Open the web GUI in your browser at http://localhost:5000.
-
-Select the COM port, input your Edge Impulse API key, choose between Test or Train, enter a label, and click Capture and Upload.
-
-The image will be captured by the ESP32 and uploaded to Edge Impulse.
-
-📝 Configuration
-
-Update the config.json file with your Edge Impulse API details if needed:
-
-{
-  "api_key": "your_api_key_here"
-}
-
-🐞 Troubleshooting
-
-Ensure the correct COM port is selected.
-
-Verify your API key is valid.
-
-Restart both the ESP32 and the Python script if encountering connectivity issues.
-
-🤝 Contributing
-
-Contributions are welcome! Feel free to fork this repository, submit issues, or make pull requests.
-
-📜 License
-
-This project is licensed under the MIT License.
-
-📧 Contact
-
-For any queries or support, feel free to reach out via GitHub Issues.
-
-Happy Coding! 🚀
-
+---
+Happy Building! 🚀
