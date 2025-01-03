@@ -1,8 +1,14 @@
-# Project: ESP32 Edge Capture
-# Author: Mukesh Sankhla
-# Website: https://www.makerbrains.com
-# GitHub: https://github.com/MukeshSankhla
+'''
+Project: ESP32 Edge Capture
+Author: Mukesh Sankhla
+Website: https://www.makerbrains.com
+GitHub: https://github.com/MukeshSankhla
 
+Description:
+This Python script facilitates capturing and uploading images from an ESP32 camera module to Edge Impulse.
+It uses a web interface for user-friendly configuration and communication via Serial to control the ESP32.
+'''
+from flask import Flask, render_template, request, jsonify, send_from_directory
 import os
 import requests
 import serial
