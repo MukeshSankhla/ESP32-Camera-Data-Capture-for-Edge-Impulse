@@ -11,7 +11,7 @@
 
 ## Requirements
 - **Hardware:**
-  - ESP32-S3 Camera Module
+  - DFRobot FireBeetle-2 ESP32-S3
   - USB Cable
 - **Software:**
   - Python 3.x
