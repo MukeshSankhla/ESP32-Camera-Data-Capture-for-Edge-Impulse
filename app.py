@@ -102,29 +102,31 @@ def capture():
             'x-add-date-id': '1',  # Ensures unique uploads if necessary
         }
 
-        # Prepare metadata (with bounding boxes if needed)
-        metadata = {
-            "version": 1,
-            "type": "bounding-box-labels",
-            "boundingBoxes": {
-                filename: [
-                    {
-                        "label": label,
-                        "x": 0,  # Example values, replace with real bounding box coordinates
-                        "y": 0,
-                        "width": 640,
-                        "height": 480
-                    }
-                ]
-            }
-        }
-        bbox_label = json.dumps(metadata, separators=(',', ':'))
-
-        # Payload with metadata
         files = [
-            ('data', (filename, open(filepath, 'rb'), 'image/jpeg')),
-            ('data', ('bounding_boxes.labels', bbox_label))
+            ('data', (filename, open(filepath, 'rb'), 'image/jpeg'))
         ]
+
+        if label:
+            # Prepare metadata (with bounding boxes if needed)
+            metadata = {
+                "version": 1,
+                "type": "bounding-box-labels",
+                "boundingBoxes": {
+                    filename: [
+                        {
+                            "label": label,
+                            "x": 0,  # Example values, replace with real bounding box coordinates
+                            "y": 0,
+                            "width": 640,
+                            "height": 480
+                        }
+                    ]
+                }
+            }
+            bbox_label = json.dumps(metadata, separators=(',', ':'))
+
+            # Add label data to files
+            files.append(('data', ('bounding_boxes.labels', bbox_label)))
 
         print(f"Uploading {filename} to Edge Impulse with label '{label}'")
         response = requests.post(
